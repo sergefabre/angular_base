@@ -1,0 +1,5 @@
+<h1 class="m-10">Users</h1>
+<ul class="m-10 list-primary">
+  <li *ngFor="let user of users" [routerLink]="[user.id]">{{ user.name }}</li>
+  <router-outlet></router-outlet>
+</ul>
