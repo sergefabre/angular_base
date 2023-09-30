@@ -1,8 +1,4 @@
-<div
-  style="height: 100vh; padding-top: 150px"
-  class="container d-flex flex-column"
->
-  <!-- <div class="d-flex flex-row">
+<!-- <div class="d-flex flex-row">
     <input class="m-1 flex-fill" type="text" [(ngModel)]="fruit" />
     <button class="btn btn-primary m-1" (click)="addFruit()">Ajouter</button>
   </div>
@@ -15,19 +11,25 @@
   </ul>
 </div> -->
 
-  <div class="conatiner d-flex flex-column" style="padding-top: 150px">
-    <nav>
-      <ul>
-        <li
-          routerLink="/"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          HomePage
-        </li>
-        <li routerLink="/users" routerLinkActive="active">Users</li>
-      </ul>
-    </nav>
-    <router-outlet></router-outlet>
-  </div>
+<div class="container d-flex flex-column">
+  <nav>
+    <ul>
+      <li
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        HomePage
+      </li>
+      <li
+        [routerLink]="['users']"
+        [queryParams]="{ details: true }"
+        routerLinkActive="active"
+      >
+        Users
+      </li>
+      <li [routerLink]="['form']" routerLinkActive="active">Formulaire</li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
 </div>

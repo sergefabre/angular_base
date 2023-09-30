@@ -28,11 +28,12 @@ export class UsersComponent {
     },
   ];
 
-  selectUser(user: User) {
-    console.log(user);
-    this.router.navigate([user.id], {
-      relativeTo: this.activatedRoute,
-      queryParams: { name: user.name },
-    });
-  }
+  // selectUser(user: User) {
+  //   console.log(user);
+  //   this.router.navigate([user.id], {
+  //     relativeTo: this.activatedRoute,
+  //     queryParams: { name: user.name },
+  //     queryParamsHandling: 'merge', // pour conserver les queryParams des routes parentes
+  //   });
+  // }
 }

@@ -9,6 +9,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class UserComponent implements OnInit {
   user: User = { id: 0, name: '???' };
+  details: string | null = null;
   constructor(private routeActive: ActivatedRoute) {
     console.log(routeActive);
   }
@@ -18,8 +19,9 @@ export class UserComponent implements OnInit {
       this.user.id = +paramMap.get('id')!;
       // this.user.name = paramMap.get('name')!;
     });
-    this.routeActive.queryParamMap.subscribe(
-      (qpM: ParamMap) => (this.user.name = qpM.get('name')!)
-    );
+    this.routeActive.queryParamMap.subscribe((qpM: ParamMap) => {
+      this.user.name = qpM.get('name')!;
+      this.details = qpM.get('details');
+    });
   }
 }
